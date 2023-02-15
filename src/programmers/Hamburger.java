@@ -3,25 +3,23 @@ package programmers;
 public class Hamburger {
     public static void main(String[] args) {
         int[] ingredient = {2, 1, 1, 2, 3, 1, 2, 3, 1};
-        System.out.println(Solution.solution(ingredient));
+        System.out.println(solution(ingredient));
     }
 
-    public static class Solution {
-        public static int solution(int[] ingredient) {
-            int answer = 0;
+    public static int solution(int[] ingredient) {
+        int answer = 0;
 
-            StringBuilder sb = new StringBuilder();
-            for (int i : ingredient) {
-                sb.append(i);
+        StringBuilder sb = new StringBuilder();
+        for (int i : ingredient) {
+            sb.append(i);
 
-                if (sb.length() > 3
-                        && sb.substring(sb.length() - 4, sb.length()).equals("1231")) {
-                    answer++;
-                    sb.delete(sb.length() - 4, sb.length());
-                }
+            if (sb.length() > 3
+                    && sb.substring(sb.length() - 4, sb.length()).equals("1231")) {
+                answer++;
+                sb.delete(sb.length() - 4, sb.length());
             }
-            return answer;
-
         }
+        return answer;
+
     }
 }
